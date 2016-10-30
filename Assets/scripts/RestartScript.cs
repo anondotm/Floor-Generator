@@ -14,6 +14,9 @@ public class RestartScript : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.R)) {
 			FloorMaker.tileCount = 0;
 			FloorMaker.spawnCounter = 0;
+			FloorMaker.innCount = 0;
+			FloorMaker.foodCount = 0;
+			FloorMaker.residenceCount = 0;
 			SceneManager.LoadScene (0);
 		}
 	}

@@ -1,6 +1,6 @@
 //Maya ASCII 2016 scene
 //Name: inntile.ma
-//Last modified: Sat, Oct 29, 2016 10:29:33 PM
+//Last modified: Sat, Oct 29, 2016 11:41:53 PM
 //Codeset: 1252
 requires maya "2016";
 currentUnit -l centimeter -a degree -t film;
@@ -13,13 +13,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "C29EF99A-4DC4-92D2-A031-339548441D59";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0.21682210019180415 6.3380183037315803 0.8378719806594126 ;
+	setAttr ".t" -type "double3" 0.19063399972925393 3.8018608828951681 0.5608308157826023 ;
 	setAttr ".r" -type "double3" -83.738352729972462 725.39999999986946 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "5868AA68-4C39-A489-A127-54AD25772F58";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 6.957440434343801;
+	setAttr ".coi" 4.4505924420216063;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";

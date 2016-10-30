@@ -1,6 +1,6 @@
 //Maya ASCII 2016 scene
 //Name: burgtile.ma
-//Last modified: Sat, Oct 29, 2016 10:25:05 PM
+//Last modified: Sat, Oct 29, 2016 11:46:26 PM
 //Codeset: 1252
 requires maya "2016";
 currentUnit -l centimeter -a degree -t film;
@@ -13,13 +13,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "C29EF99A-4DC4-92D2-A031-339548441D59";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -0.71218791288603533 12.013557770630632 -0.12734603941683539 ;
-	setAttr ".r" -type "double3" -95.738352729961846 88.599999999746402 -1.3017892473668484e-013 ;
+	setAttr ".t" -type "double3" -0.13125366764985408 5.4890012698976482 -0.022632441347135768 ;
+	setAttr ".r" -type "double3" -96.338352729975014 94.999999999745498 -2.5444437451708134e-014 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "5868AA68-4C39-A489-A127-54AD25772F58";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 12.292231151551919;
+	setAttr ".coi" 7.3531535127601559;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -141,8 +141,8 @@ createNode transform -n "pasted__pasted__group" -p "pasted__group2";
 	setAttr ".sp" -type "double3" 0.048884479677922532 0.12871519862460315 -1 ;
 createNode transform -n "pasted__pasted__pasted__pCube2" -p "pasted__pasted__group";
 	rename -uid "3FB7748C-4B9E-B25D-0470-89A3233D870D";
-	setAttr ".t" -type "double3" 0.06410396590235945 0.12871519862460315 1.6607286862486599 ;
-	setAttr ".s" -type "double3" 1.7056369444594692 1.680859049868263 1 ;
+	setAttr ".t" -type "double3" 0.09289392498194915 0.12871519862460315 1.6607286862486599 ;
+	setAttr ".s" -type "double3" 1.438972198579173 1.680859049868263 1 ;
 createNode mesh -n "pasted__pasted__pasted__pCubeShape2" -p "pasted__pasted__pasted__pCube2";
 	rename -uid "4740827F-4B76-A3A4-FA4B-FC93CEBEECD5";
 	setAttr -k off ".v";
@@ -193,15 +193,15 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pCubeShape2" -p "pasted__pas
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "711C249F-4D47-6B9D-4DDB-F0A758B73779";
+	rename -uid "DB8D74D4-4AF1-31DC-47F2-D79950AF19F3";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "0C568473-4630-353A-FBC5-CC8CD185F8BE";
+	rename -uid "40A6F51A-4AD0-6AB2-F534-7CBDE8D595A1";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "F11FF0D8-4415-4590-4FA9-68ABAD5D9036";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "1ACFA2E5-42AD-DEBA-77BA-7C9A7EDE5F5D";
+	rename -uid "E0F036F2-4D96-175D-5C0D-998DA7A4E54F";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "C557D8DF-48CE-D563-A8D4-73AAC6A94833";
 	setAttr ".g" yes;
@@ -370,8 +370,6 @@ select -ne :defaultResolution;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "polyCube1.out" "pCubeShape1.i";
 connectAttr "polyBevel1.out" "pasted__pCubeShape2.i";
 connectAttr "polyBevel2.out" "pasted__pasted__pasted__pCubeShape2.i";
