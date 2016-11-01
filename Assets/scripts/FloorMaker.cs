@@ -59,7 +59,7 @@ public class FloorMaker : MonoBehaviour {
 			} else if (whatTile == 1 && foodCount < 2) {
 				tileDecide = foodPrefab;
 				foodCount++;
-			} else if (whatTile > 1 && whatTile < 4 && residenceCount < 10) {
+			} else if (whatTile > 1 && whatTile < 4) {
 				tileDecide = residencePrefab;
 				residenceCount++;
 			} else if (whatTile > 4 && whatTile < 6 && shopCount < 2) {
