@@ -3,6 +3,8 @@ using System.Collections;
 
 public class FloorMaker : MonoBehaviour {
 
+	public GameObject mainCam;
+
 	public static int innCount;
 	public static int foodCount;
 	public static int residenceCount;
@@ -30,7 +32,7 @@ public class FloorMaker : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
-		spawnFrequency = Random.Range (0.4f, 1f);
+		spawnFrequency = Random.Range (0.5f, 1f); //.4 is good
 		spawnLifetime = Random.Range (10, 15); //DEFAULT is 10-20
 
 		//FREQUENCY OF TURNING (GREATER IS MORE FREQUENTLY)
@@ -38,7 +40,7 @@ public class FloorMaker : MonoBehaviour {
 		higherValue = .2f;//DEFAULT is .1
 
 
-		tileLimit = 110;
+		tileLimit = 100;
 	}
 	
 	// Update is called once per frame
@@ -46,17 +48,17 @@ public class FloorMaker : MonoBehaviour {
 
 		if (counter < spawnLifetime && tileCount < tileLimit) {
 
-			whatTile = Random.Range (0, 15); //generates random numbers out of total amount of tiles available
+			whatTile = Random.Range (0, 16); //generates random numbers out of total amount of tiles available
 			Transform tileDecide;
 
 			// uses what tile to DECIDE TILE STYLE spawned
 			if (whatTile == 0 && innCount < 1) {
 				tileDecide = innPrefab;
 				innCount++;
-			} else if (whatTile == 1 && foodCount < 3) {
+			} else if (whatTile == 1 && foodCount < 2) {
 				tileDecide = foodPrefab;
 				foodCount++;
-			} else if (whatTile > 1 && whatTile < 4 && residenceCount < 12) {
+			} else if (whatTile > 1 && whatTile < 4 && residenceCount < 10) {
 				tileDecide = residencePrefab;
 				residenceCount++;
 			}
@@ -79,7 +81,8 @@ public class FloorMaker : MonoBehaviour {
 			//check if you can spawn SPAWNERS
 			else if (randFloat >= spawnFrequency && spawnCounter<10) {
 				//spawn SPAWNER
-				Instantiate (floormakerSpherePrefab,this.transform.position,this.transform.rotation);
+				Transform newSpawner = Instantiate (floormakerSpherePrefab,this.transform.position,this.transform.rotation)as Transform;
+				Camera.main.GetComponent<CameraScript> ().spawners.Add (newSpawner);
 				spawnCounter++;
 			}
 
@@ -95,7 +98,7 @@ public class FloorMaker : MonoBehaviour {
 		} else {
 			Destroy (this.gameObject);
 		}
-		Debug.Log (tileCount);
+		//Debug.Log (tileCount);
 
 
 	}
