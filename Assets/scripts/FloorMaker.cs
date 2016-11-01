@@ -27,6 +27,7 @@ public class FloorMaker : MonoBehaviour {
 	public Transform innPrefab;
 	public Transform foodPrefab;
 	public Transform residencePrefab;
+	public Transform drugPrefab;
 
 	public Transform floormakerSpherePrefab;
 	// Use this for initialization
@@ -61,6 +62,9 @@ public class FloorMaker : MonoBehaviour {
 			} else if (whatTile > 1 && whatTile < 4 && residenceCount < 10) {
 				tileDecide = residencePrefab;
 				residenceCount++;
+			} else if (whatTile > 4 && whatTile < 6 && shopCount < 2) {
+				tileDecide = drugPrefab;
+				shopCount++;
 			}
 			else {
 				tileDecide = floorPrefab;

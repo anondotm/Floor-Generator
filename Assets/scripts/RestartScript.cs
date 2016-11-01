@@ -17,6 +17,7 @@ public class RestartScript : MonoBehaviour {
 			FloorMaker.innCount = 0;
 			FloorMaker.foodCount = 0;
 			FloorMaker.residenceCount = 0;
+			FloorMaker.shopCount = 0;
 			SceneManager.LoadScene (0);
 		}
 	}
